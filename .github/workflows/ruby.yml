@@ -34,7 +34,6 @@ jobs:
     
     - name: Remove label if needed
       if: failure()
-      uses: actions/checkout@v2
-    - uses: actions-ecosystem/action-remove-labels@v1
+      uses: actions-ecosystem/action-remove-labels@v1
       with:
         labels: Ready
