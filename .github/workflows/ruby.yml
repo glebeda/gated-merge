@@ -31,7 +31,8 @@ jobs:
         ruby-version: '2.6'
     - name: Run tests
       run: ruby test_simple_program.rb 
-    
+
+    - uses: actions/checkout@v2
     - name: Remove label if needed
       if: failure()
       uses: actions-ecosystem/action-remove-labels@v1
