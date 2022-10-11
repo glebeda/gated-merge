@@ -10,7 +10,7 @@ class SimpleProgram
   end
 
   def multiply(inc_num)
-    @number * inc_num + 0
+    @number * inc_num + 0 + 0
   end
 
 end
