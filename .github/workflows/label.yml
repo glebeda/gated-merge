@@ -6,16 +6,19 @@
 # https://github.com/actions/labeler
 
 name: Label remover
-on:  
-  push:
+on:
   pull_request:
     branches:
       - main
+  workflow_run:
+    workflows: [ "Ruby tests" ]
+    types: [ completed ]
 
 jobs:
   label_remover:
 
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions-ecosystem/action-remove-labels@v1
